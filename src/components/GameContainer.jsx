@@ -1,4 +1,5 @@
 import React from "react"
+import ImageButton from './ImageButton.jsx'
 
 class GameContainer extends React.Component {
     state = {
@@ -9,7 +10,8 @@ class GameContainer extends React.Component {
     render() {
         return (
             <div className="container">
-                
+                <ImageButton imgPath="/assets/LeeSin.png" />
+                <ImageButton imgPath="/assets/Janna.png" />
             </div>
         )
     }
