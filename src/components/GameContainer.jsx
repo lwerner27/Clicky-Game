@@ -15,6 +15,7 @@ class GameContainer extends React.Component {
     handleClick = (event) => {
         let clickedChamp = event.target.getAttribute('data');
         console.log(clickedChamp)
+        // this is a test change
     }
 
 
