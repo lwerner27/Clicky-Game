@@ -10,9 +10,7 @@ const divStyle = {
 class ImageButton extends React.Component {
     render() {
         return (
-            <a href="#!"  data-value={this.props.champName} style={divStyle}>
-                <img src={this.props.imgPath} alt="" className="responsive-img" />
-            </a>
+            <img src={this.props.imgPath} alt=""  data-value={this.props.champName} onClick={this.props.handleClick} className="responsive-img" style={divStyle}/> 
         )
     }
 }

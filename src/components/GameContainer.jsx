@@ -8,7 +8,14 @@ const shuffledChamps = shuffle(champs)
 class GameContainer extends React.Component {
     state = {
         currentScore: 0,
-        highScore: 0
+        highScore: 0,
+        clickedChamps: []
+    }
+
+    handleClick = (event) => {
+        event.preventDefault()
+        console.log(event.target)
+
     }
 
 
@@ -19,10 +26,10 @@ class GameContainer extends React.Component {
 
                 {
                     shuffledChamps.map((champ) => {
-                        return <ImageButton imgPath={champ.path} champName={champ.name} />
+                        return <ImageButton imgPath={champ.path} key={champ.name} handleClick={this.handleClick}/>
                     })
                 }
-                
+
             </div>
         )
     }
