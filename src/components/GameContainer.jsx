@@ -13,9 +13,8 @@ class GameContainer extends React.Component {
     }
 
     handleClick = (event) => {
-        event.preventDefault()
-        console.log(event.target)
-
+        let clickedChamp = event.target.getAttribute('data');
+        console.log(clickedChamp)
     }
 
 
@@ -26,7 +25,14 @@ class GameContainer extends React.Component {
 
                 {
                     shuffledChamps.map((champ) => {
-                        return <ImageButton imgPath={champ.path} key={champ.name} handleClick={this.handleClick}/>
+                        return (
+                            <ImageButton 
+                                clickHandler={this.handleClick.bind()}
+                                imgPath={champ.path} 
+                                key={champ.name} 
+                                data={champ.name} 
+                            />
+                        )
                     })
                 }
 
