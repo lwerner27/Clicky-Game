@@ -3,8 +3,6 @@ import ImageButton from './ImageButton.jsx'
 import Nav from "./Nav.jsx"
 import champs from '../paths.js'
 
-const shuffledChamps = shuffle(champs)
-
 class GameContainer extends React.Component {
     state = {
         currentScore: 0,
@@ -14,28 +12,57 @@ class GameContainer extends React.Component {
 
     handleClick = (event) => {
         let clickedChamp = event.target.getAttribute('data');
-        console.log(clickedChamp)
-        // this is a test change
+
+        if (this.state.clickedChamps.includes(clickedChamp)) {
+            this.setState({
+                currentScore: 0,
+                clickedChamps: []
+            })
+        } else {
+            this.setState(prevState => {
+                let newArr = prevState.clickedChamps
+                newArr.push(clickedChamp)
+
+                let newScore = this.state.currentScore + 1
+
+                if (newScore < prevState.highScore) {
+                    newScore = prevState.highScore
+                }
+
+                return {
+                    clickedChamps: newArr, 
+                    currentScore: prevState.currentScore + 1,
+                    highScore: newScore
+                }
+            })
+        }
+        
+    }
+
+    setupGame = (array) => {
+        let shuffledArray = shuffle(array)
+        return (
+            shuffledArray.map((champ) => {
+                return (
+                    <ImageButton 
+                        clickHandler={this.handleClick.bind()}
+                        imgPath={champ.path} 
+                        key={champ.name} 
+                        data={champ.name} 
+                    />
+                )
+            })
+        )
     }
 
 
     render() {
         return (
             <div>
-                <Nav />
-
-                {
-                    shuffledChamps.map((champ) => {
-                        return (
-                            <ImageButton 
-                                clickHandler={this.handleClick.bind()}
-                                imgPath={champ.path} 
-                                key={champ.name} 
-                                data={champ.name} 
-                            />
-                        )
-                    })
-                }
+                <Nav currentScore={this.state.currentScore} highScore={this.state.highScore}/>
+                <div className="container center">
+                    { this.setupGame(champs) }
+                </div>
 
             </div>
         )
