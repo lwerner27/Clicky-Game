@@ -1,51 +1,51 @@
 const champs = [
     {
         name: "Aatrox",
-        path: "/assets/Aatrox.png"
+        path: "./assets/aatrox.png"
     },
     {
         name: "Bard",
-        path: "/assets/Bard.png"
+        path: "./assets/bard.png"
     },
     {
         name: "Caitlyn",
-        path: "/assets/Caitlyn.png"
+        path: "./assets/Caitlyn.png"
     },
     {
         name: "Darius",
-        path: "/assets/Darius.png"
+        path: "./assets/Darius.png"
     },
     {
         name: "Ekko",
-        path: "/assets/Ekko.png"
+        path: "./assets/Ekko.png"
     },
     {
         name: "Fiddlesticks",
-        path: "/assets/Fiddlesticks.png"
+        path: "./assets/Fiddlesticks.png"
     },
     {
         name: "Galio",
-        path: "/assets/Galio.png"
+        path: "./assets/Galio.png"
     },
     {
         name: "Hecarim",
-        path: "/assets/Hecarim.png"
+        path: "./assets/Hecarim.png"
     },
     {
         name: "Illaoi",
-        path: "/assets/Illaoi.png"
+        path: "./assets/Illaoi.png"
     },
     {
         name: "Janna",
-        path: "/assets/Janna.png"
+        path: "./assets/Janna.png"
     },
     {
         name: "Kaisa",
-        path: "/assets/Kaisa.png"
+        path: "./assets/Kaisa.png"
     },
     {
         name: "Lee-Sin",
-        path: "/assets/LeeSin.png"
+        path: "./assets/LeeSin.png"
     },
 
 ]
