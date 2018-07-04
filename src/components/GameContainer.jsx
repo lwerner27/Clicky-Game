@@ -61,7 +61,13 @@ class GameContainer extends React.Component {
             <div>
                 <Nav currentScore={this.state.currentScore} highScore={this.state.highScore}/>
                 <div className="container center">
-                    { this.setupGame(champs) }
+                    {/* { this.setupGame(champs) } */}
+                    <ImageButton 
+                        clickHandler={this.handleClick.bind()}
+                        imgPath="../../public/assets/bard.png" 
+                        key="Bard" 
+                        data="Bard"
+                    />
                 </div>
 
             </div>
